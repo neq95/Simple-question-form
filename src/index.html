@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question form</title>
+</head>
+<body>
+    <div class="container">
+        <aside class="aside">
+            <h1 class="aside__title">Question form</h1>
+        </aside>
+        <section class="main">
+            <div class="question">
+                <h3 class="block__title">Ask you question</h3>
+                <form class="question-form">
+                    <div class="question-form__input-box input-box">
+                        <input type="text" id="question-input" name="question" class="input-box__input" required autocomplete="off" minlength="10" maxlength="256" placeholder=" ">
+                        <label for="question-input" class="input-box__label">
+                            <span class="input-box__label-text">What do you want to ask?</span>
+                        </label>
+                    </div>
+                    <button type="submit" class="question-form__button button" disabled>
+                        <span class="button__text">ask</span>
+                        <div class="button__liquid"></div>
+                    </button>
+                </form>
+            </div>
+            <div class="block">
+                <h3 class="block__title">Your questions</h3>
+                <div class="questions-list"></div>
+                
+            </div>
+        </section>
+        <div class="modal-button">+</div>
+    </div>
+</body>
+</html>
