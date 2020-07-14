@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Chewy&family=Indie+Flower&display=swap');
+
+$auth-title: "Chewy", cursive;
+$auth-main: "Indie Flower", cursive;
+
 *, 
 *::after,
 *::before {
@@ -67,6 +72,7 @@ body {
     height: 50px;
     position: relative;
     overflow-x: hidden;
+    font-size: 10px;
 
     &__label {
         position: absolute;
@@ -96,7 +102,7 @@ body {
         bottom: 5px;
         left: 0;
         transition: all 0.3s ease;
-        font-size: 18px;
+        font-size: 1.8em;
     }
     
     &__input {
@@ -106,13 +112,13 @@ body {
         border: none;
         padding-top: 20px;
         outline: none;
-        font-size: 18px;
+        font-size: 1.8em;
 
         &:focus + .input-box__label .input-box__label-text,
         &:not(:placeholder-shown) + .input-box__label .input-box__label-text {
             transform: translateY(-200%);
             color: #6493ce;
-            font-size: 12px;
+            font-size: 1.2em;
         }
 
         &:focus + .input-box__label::after,
@@ -235,21 +241,74 @@ body {
     }
 }
 
-.modal {
+.modal-overlay {
     position: absolute;
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.3);
     top: 0;
     left: 0;
+}
 
-    &__modal-window {
-        position: absolute;
-        width: 500px;
-        height: 400px;
-        background-color: #fff;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+.modal {
+    position: absolute;
+    padding: 30px;
+    width: 500px;
+    background-color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: $auth-main;
+    border-radius: 30px;
+
+    &__title {
+        text-align: center;
+        font-weight: 500;
+        font-family: $auth-title;
+        font-size: 45px;
+    }
+
+    &__input-box {
+        width: 70%;
+        margin: 0 auto;
+        height: 100px;
+        font-size: 16px;
+    }
+
+    &__input {
+        font-family: $auth-main;
+        font-size: 1.6em;
+        padding-top: 45px;
+    }
+
+    &__button-box {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 40px;
+    }
+
+    &__button {
+        text-align: center;
+        font-size: 20px;
+        background-color: #6493ce;
+        color: #fff;
+        width: 150px;
+        padding: 20px 0;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        outline: none;
+
+        &:hover {
+            background-color: #8aadda;
+        }
+
+        &--cancel {
+            background-color: #cf2229;
+
+            &:hover {
+                background-color: #e45a60;
+            }
+        }
     }
 }

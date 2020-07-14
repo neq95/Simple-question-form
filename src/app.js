@@ -1,6 +1,6 @@
 import "./style.scss";
 import {Question} from "./question";
-import { openModal } from "./modal";
+import { openModal, createAuthContent } from "./modal";
 
 let form = document.querySelector(".question-form");
 let formInput = form.querySelector(".input-box__input");
@@ -12,7 +12,9 @@ formInput.addEventListener("input", changeFormInputHandler);
 
 window.addEventListener("load", Question.renderList);
 
-modalButton.addEventListener("click", openModal);
+modalButton.addEventListener("click", () => {
+    openModal("Authorization", createAuthContent());
+});
 
 function changeFormInputHandler() {
     (formInput.value.length >= 10) ? formButton.disabled = false : formButton.disabled = true;
