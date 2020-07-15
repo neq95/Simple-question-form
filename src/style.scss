@@ -267,7 +267,9 @@ body {
         font-family: $auth-title;
         font-size: 45px;
     }
+}
 
+.auth {
     &__input-box {
         width: 70%;
         margin: 0 auto;
@@ -301,6 +303,10 @@ body {
 
         &:hover {
             background-color: #8aadda;
+        }
+
+        &:disabled {
+            background-color: rgba(0,0,0,0.3);
         }
 
         &--cancel {

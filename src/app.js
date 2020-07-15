@@ -1,6 +1,7 @@
 import "./style.scss";
 import {Question} from "./question";
-import { openModal, createAuthContent } from "./modal";
+import { openModal } from "./modal";
+import { createAuthContent, authFormHandler } from "./auth";
 
 let form = document.querySelector(".question-form");
 let formInput = form.querySelector(".input-box__input");
@@ -14,6 +15,7 @@ window.addEventListener("load", Question.renderList);
 
 modalButton.addEventListener("click", () => {
     openModal("Authorization", createAuthContent());
+    document.querySelector(".auth").addEventListener("submit", authFormHandler);
 });
 
 function changeFormInputHandler() {

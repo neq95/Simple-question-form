@@ -23,6 +23,24 @@ export class Question {
         let list = document.querySelector(".questions-list")
         list.innerHTML = html;
     }
+
+    static getQuestionsFromServer(token) {
+        if(!token) {
+            return new Promise((resolve, reject) => {
+                reject(new Error("You don't have any token"));
+            })
+        }
+        return fetch(`https://simple-question-form.firebaseio.com/questions.json?auth=${token}`)
+            .then(response => response.json())
+            .then(data => {
+                return data ? Object.keys(data).map(key => {
+                    return {
+                        ...data[key],
+                        id: key
+                    }
+                }) : [];
+            });
+    }
 }
 
 function addToLocalStorage(question) {
